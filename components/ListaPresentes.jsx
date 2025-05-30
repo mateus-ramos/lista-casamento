@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+// import { Card, CardContent } from '@/components/ui/card';
+// import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
-const stripePromise = loadStripe('pk_test_suaChavePublicaAqui');
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 const gifts = [
   { id: 1, name: 'Panela de Arroz Elétrica', price: 2500, image: '/gifts/panela.png' },
@@ -47,16 +47,25 @@ export default function ListaPresentes() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="rounded-2xl shadow-lg">
+            {/* <Card className="rounded-2xl shadow-lg"> */}
+            <div className="rounded-2xl shadow-lg bg-white">
               <img src={gift.image} alt={gift.name} className="w-full h-48 object-cover rounded-t-2xl" />
-              <CardContent className="p-4 flex flex-col items-center">
+              {/* <CardContent className="p-4 flex flex-col items-center"> */}
+              <div className="p-4 flex flex-col items-center">
                 <h2 className="text-xl font-semibold text-center mb-2">{gift.name}</h2>
                 <p className="text-sm text-gray-500 mb-4">R$ {(gift.price / 100).toFixed(2)}</p>
-                <Button onClick={() => handleCheckout(gift)} disabled={loading}>
+                <button
+                  onClick={() => handleCheckout(gift)}
+                  disabled={loading}
+                  className="bg-pink-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-pink-600 transition"
+                >
                   Presentear 🎉
-                </Button>
-              </CardContent>
-            </Card>
+                </button>
+                {/* <Button onClick={() => handleCheckout(gift)} disabled={loading}>
+                  Presentear 🎉
+                </Button> */}
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
