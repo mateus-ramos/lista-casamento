@@ -37,38 +37,41 @@ export default function ListaPresentes() {
   };
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">🎁 Lista de Presentes dos Noivos</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {gifts.map((gift) => (
-          <motion.div
-            key={gift.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            {/* <Card className="rounded-2xl shadow-lg"> */}
-            <div className="rounded-2xl shadow-lg bg-white">
-              <img src={gift.image} alt={gift.name} className="w-full h-48 object-cover rounded-t-2xl" />
-              {/* <CardContent className="p-4 flex flex-col items-center"> */}
-              <div className="p-4 flex flex-col items-center">
-                <h2 className="text-xl font-semibold text-center mb-2">{gift.name}</h2>
-                <p className="text-sm text-gray-500 mb-4">R$ {(gift.price / 100).toFixed(2)}</p>
-                <button
-                  onClick={() => handleCheckout(gift)}
-                  disabled={loading}
-                  className="bg-pink-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-pink-600 transition"
-                >
-                  Presentear 🎉
-                </button>
-                {/* <Button onClick={() => handleCheckout(gift)} disabled={loading}>
-                  Presentear 🎉
-                </Button> */}
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+    // <div className="p-4 max-w-4xl mx-auto">
+    //   <h1 className="text-3xl font-bold text-center mb-6">🎁 Lista de Presentes dos Noivos</h1>
+    //   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    //     {gifts.map((gift) => (
+    //       <motion.div
+    //         key={gift.id}
+    //         initial={{ opacity: 0, y: 20 }}
+    //         animate={{ opacity: 1, y: 0 }}
+    //         transition={{ duration: 0.4 }}
+    //       >
+    //         {/* <Card className="rounded-2xl shadow-lg"> */}
+    //         <div className="rounded-2xl shadow-lg bg-white">
+    //           <img src={gift.image} alt={gift.name} className="w-full h-48 object-cover rounded-t-2xl" />
+    //           {/* <CardContent className="p-4 flex flex-col items-center"> */}
+    //           <div className="p-4 flex flex-col items-center">
+    //             <h2 className="text-xl font-semibold text-center mb-2">{gift.name}</h2>
+    //             <p className="text-sm text-gray-500 mb-4">R$ {(gift.price / 100).toFixed(2)}</p>
+    //             <button
+    //               onClick={() => handleCheckout(gift)}
+    //               disabled={loading}
+    //               className="bg-pink-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-pink-600 transition"
+    //             >
+    //               Presentear 🎉
+    //             </button>
+    //             {/* <Button onClick={() => handleCheckout(gift)} disabled={loading}>
+    //               Presentear 🎉
+    //             </Button> */}
+    //           </div>
+    //         </div>
+    //       </motion.div>
+    //     ))}
+    //   </div>
+    // </div>
+    <div className="text-center mt-10">
+      <h1 className="text-2xl font-bold">Funcionou 🎉</h1>
     </div>
   );
 }
