@@ -1,5 +1,6 @@
 {
   "name": "lista-casamento",
+  "type": "module",
   "version": "1.0.0",
   "description": "Este é um site divertido e responsivo para que os convidados possam presentear os noivos com itens selecionados, com pagamento via Stripe.",
   "homepage": "https://github.com/mateus-ramos/lista-casamento#readme",
